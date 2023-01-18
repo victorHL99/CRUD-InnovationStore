@@ -23,9 +23,26 @@ async function getProducts(req: Request, res: Response) {
   return res.status(200).json(products)
 }
 
+async function updateProduct(req: Request, res: Response) {
+  const { id } = req.params
+  const { name, category, status, quantity } = req.body
+
+  const product = {
+    name,
+    category,
+    status,
+    quantity
+  } as CreateProduct
+
+  await productsService.update(Number(id), product)
+
+  return res.status(200).json({ message: "Product updated" })
+}
+
 const productsController = {
   create: createProduct,
-  getProducts
+  getProducts,
+  update: updateProduct
 }
 
 export default productsController;
