@@ -12,9 +12,14 @@ async function getProducts() {
   return products
 }
 
+async function updateProduct(id: number, product: CreateProduct) {
+  await productRepository.update(id, product)
+}
+
 const productsService = {
   create: createProduct,
-  read: getProducts
+  read: getProducts,
+  update: updateProduct
 }
 
 export default productsService;
