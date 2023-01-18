@@ -39,10 +39,19 @@ async function updateProduct(req: Request, res: Response) {
   return res.status(200).json({ message: "Product updated" })
 }
 
+async function deleteProduct(req: Request, res: Response) {
+  const { id } = req.params
+
+  await productsService.delete(Number(id))
+
+  return res.status(200).json({ message: "Product deleted" })
+}
+
 const productsController = {
   create: createProduct,
   getProducts,
-  update: updateProduct
+  update: updateProduct,
+  delete: deleteProduct
 }
 
 export default productsController;

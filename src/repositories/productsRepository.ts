@@ -22,11 +22,20 @@ async function updateProduct(id: number, product: CreateProduct) {
   })
 }
 
+async function deleteProduct(id: number) {
+  await client.products.delete({
+    where: {
+      id
+    }
+  })
+}
+
 
 const productsRepository = {
   create: createProduct,
   read: getProducts,
-  update: updateProduct
+  update: updateProduct,
+  delete: deleteProduct
 }
 
 export default productsRepository;

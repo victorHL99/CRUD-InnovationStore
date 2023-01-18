@@ -16,10 +16,15 @@ async function updateProduct(id: number, product: CreateProduct) {
   await productRepository.update(id, product)
 }
 
+async function deleteProduct(id: number) {
+  await productRepository.delete(id)
+}
+
 const productsService = {
   create: createProduct,
   read: getProducts,
-  update: updateProduct
+  update: updateProduct,
+  delete: deleteProduct
 }
 
 export default productsService;
