@@ -13,9 +13,20 @@ async function getProducts() {
   return products
 }
 
+async function updateProduct(id: number, product: CreateProduct) {
+  await client.products.update({
+    where: {
+      id
+    },
+    data: product
+  })
+}
+
+
 const productsRepository = {
   create: createProduct,
-  read: getProducts
+  read: getProducts,
+  update: updateProduct
 }
 
 export default productsRepository;
