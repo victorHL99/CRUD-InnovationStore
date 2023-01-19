@@ -29,5 +29,5 @@ enum Status {
 model CEP {
   id         Int    @id @default(autoincrement())
   name       String @unique
-  identifier String
+  identifier Int    @unique
 }
