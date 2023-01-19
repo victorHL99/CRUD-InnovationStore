@@ -3,7 +3,7 @@ import axios from 'axios';
 
 async function getAllCepsFromIBGE(url: string) {
   const response = await axios.get(url);
-  const ceps = response.data.map((cep: any) => {
+  const ceps = response.data.map((cep: { id: number, nome: string }) => {
     return {
       identifier: cep.id,
       name: cep.nome
@@ -13,7 +13,7 @@ async function getAllCepsFromIBGE(url: string) {
   return ceps
 }
 
-async function insertCeps(ceps) {
+async function insertCeps(ceps: { identifier: number; name: string; }[]) {
   await client.cEP.createMany({
     data: ceps
   })
