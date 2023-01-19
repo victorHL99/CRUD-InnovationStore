@@ -6,7 +6,7 @@
   "scripts": {
     "start:dev": "nodemon --watch 'src/' --exec 'ts-node src/index.ts' -e ts",
     "dev": "nodemon src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prisma:studio": " npx prisma studio"
   },
   "keywords": [],
   "author": "",
