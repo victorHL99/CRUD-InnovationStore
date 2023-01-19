@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start:postgree": "sudo service postgresql start",
+    "seed:database": "npx prisma db seed",
+    "generate:database": "npx prisma generate && npx prisma migrate dev --name init",
     "start:dev": "nodemon --watch 'src/' --exec 'ts-node src/index.ts' -e ts",
     "dev": "nodemon src/index.ts",
     "prisma:studio": " npx prisma studio"
@@ -11,6 +14,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
+  },
   "dependencies": {
     "@prisma/client": "^4.8.1",
     "axios": "^1.2.3",
