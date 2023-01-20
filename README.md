@@ -69,6 +69,13 @@ GET /products/
     - body : {}
 ```
 
+```bash
+GET /cep/
+    - Rota para a leitura de todos os produtos
+    - Headers: {}
+    - body : {}
+```
+
 ### PUT
 
 ```bash
