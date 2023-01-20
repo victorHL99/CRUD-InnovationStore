@@ -43,3 +43,59 @@ Se tudo correu bem, é somente necessário rodar o seguinte comando para iniciar
 ```bash
 npm run start:dev
 ```
+
+## Routes
+
+### POST
+
+```bash
+POST /products/
+    - Rota para a criação de um produto
+    - Headers: {}
+    - body : {
+        "name":"Max-Steel",
+        "category": "Action Figure",
+        "status": "ACTIVE" | "INACTIVE",
+        "quantity": 10
+      }
+```
+
+### GET
+
+```bash
+GET /products/
+    - Rota para a leitura de todos os produtos
+    - Headers: {}
+    - body : {}
+```
+
+### PUT
+
+```bash
+PUT /products/:id
+    - Rota para atualizar o produto escolhido
+    - Headers: {}
+    - body : {
+        "name":"Barbie",
+        "category": "Toy Figure",
+        "status": "ACTIVE" | "INACTIVE",
+        "quantity": 20
+      }
+```
+
+### DELETE
+
+```bash
+DELETE /products/:id
+    - Rota para deletar o produto escolhido
+    - Headers: {}
+    - body : {}
+```
+
+## Como observar os dados
+
+Uma das funcionalidades do prisma, é poder observar o banco de dados em forma de página na web, para isso é necessário somente que rode o comando seguinte:
+
+```bash
+npm run prisma studio
+```
